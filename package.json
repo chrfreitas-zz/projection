@@ -6,9 +6,7 @@
   "author": "chrfreitas <chrfreitas@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "gulp js:test",
-    "start": "cd public/ && angular-http-server",
-    "deploy": "cd public/ && aero deploy"
+    "start": "http-server -o"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -28,6 +26,7 @@
     "jshint": "^2.9.4"
   },
   "dependencies": {
-    "gulp-stylus": "^2.6.0"
+    "gulp-stylus": "^2.6.0",
+    "http-server": "^0.10.0"
   }
 }
