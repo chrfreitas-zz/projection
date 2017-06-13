@@ -23,10 +23,9 @@
     "gulp-less": "^3.3.0",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglifycss": "^1.0.8",
-    "jshint": "^2.9.4"
-  },
-  "dependencies": {
+    "jshint": "^2.9.4",
     "gulp-stylus": "^2.6.0",
-    "http-server": "^0.10.0"
+    "http-server": "^0.10.0",
+    "vue": "^2.3.4"
   }
 }
