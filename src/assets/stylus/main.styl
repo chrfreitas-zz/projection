@@ -1,3 +1,18 @@
+@require "variables"
+
+html
 body
-    background red;
-    
+    padding 0
+    margin 0
+    height 100%
+
+.main
+    width 100%
+    height 100%
+    background linear-gradient(to right, $blue-light  0%, $blue-dark 100%)
+    display flex
+    justify-content center
+    align-items center
+    font-family $font-nano
+
+@require "steps"

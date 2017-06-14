@@ -1,0 +1,43 @@
+$font-size = 20px
+
+.step
+    display none
+    flex-direction column
+    align-items center
+    justify-content center
+
+    &--active
+        display inline-flex
+
+    &__description
+        color $white
+        font-size $font-size
+        text-align center
+
+    &__input
+        background transparent
+        border none
+        border-bottom 1px solid #fff
+        color #fff
+        font-size $font-size
+        text-align center
+        margin 10px 0
+        width 75%
+        font-family $font-nano
+
+        &:hover
+        &:active
+        &:focus
+            border: none;
+            outline: 0;
+            border-bottom: 1px solid #fff
+
+    &__button
+        background-color transparent
+        border-radius 3px
+        border 1px solid $white
+        color $white
+        padding 10px 45px
+        font-size 15px
+        margin 45px 0 0 0
+        font-family $font-nano

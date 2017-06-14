@@ -3,10 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Projection</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="dist/css/style.min.css">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
 </head>
 <body>
+
+    <main class="main">
+
+        <!-- Investiment -->
+        <div class="step step--active">
+            <div class="step__description">I want to invest</div>
+            <input class="step__input" type="text">
+            <button class="step__button">Next</button>
+        </div>
+
+        <!-- Percent by year -->
+        <div class="step">
+            <div class="step__description">... with growth of</div>
+            <input class="step__input" type="text"> %
+            <div class="step__description">per year ...</div>
+            <button class="step__button">Next</button>
+        </div>
+
+        <!-- Time -->
+        <div class="step">
+            <div class="step__description">... for</div>
+            <input class="step__input" type="text">
+            <div class="step__description">years.</div>
+            <button class="step__button">Next</button>
+        </div>
+
+        <!-- Result -->
+        <div class="step">
+            <div class="step__description">So ... In {x} years You'll have:</div>
+            <div>
+                {x}
+            </div>
+        </div>
+
+        <div class="loader"></div>
+
+    </main>
 
     <script src="node_modules/vue/dist/vue.min.js"></script>
     <script src="dist/js/bundle.min.js"></script>
