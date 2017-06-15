@@ -1,13 +1,25 @@
 $font-size = 20px
 
 .step
-    display none
     flex-direction column
     align-items center
     justify-content center
+    transform translateX(999px)
+    opacity 0
+    position absolute
+    display inline-flex
 
     &--active
-        display inline-flex
+        transition transform 1s, opacity 2s
+        opacity 1
+        transform translateX(0)
+        position absolute
+
+    &--done
+        transition transform 2s, opacity 1s
+        opacity 0
+        transform translateX(-999px)
+        position absolute
 
     &__description
         color $white
