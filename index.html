@@ -15,11 +15,17 @@
 
     <main class="main">
 
+        <!-- Greatings -->
+        <div class="step step--done">
+            <div class="step__description">Welcome! I'll make some questions to help. Ok ?!</div>
+            <button class="step__button" v-on:click="next">Next</button>
+        </div>
+
         <!-- Investiment -->
         <div class="step step--active">
             <div class="step__description">I want to invest</div>
             <input class="step__input" type="text">
-            <button class="step__button">Next</button>
+            <button class="step__button" v-on:click="next">Next</button>
         </div>
 
         <!-- Percent by year -->
@@ -45,8 +51,6 @@
                 {x}
             </div>
         </div>
-
-        <div class="loader"></div>
 
     </main>
 

@@ -13,7 +13,7 @@ gulp.task('js:bundle', () => {
 
     gulp.start('js:clean');
 
-    gulp.src(['src/assets/js/**/*.js', '!src/assets/js/**/*.test.js'])
+    gulp.src(['src/assets/js/*/*.js', '!src/assets/js/**/*.test.js'])
         .pipe(jshint())
         .pipe(sourcemaps.init())
         .pipe(jshint.reporter('default'))
@@ -30,7 +30,7 @@ gulp.task('js:clean', () => {
 })
 
 gulp.task('js:watch', () => {
-    gulp.watch('src/assets/js/**/*.js', ['js:bundle']);
+    gulp.watch('src/assets/js/*/*.js', ['js:bundle']);
 });
 
 gulp.task('js:test', () => {
