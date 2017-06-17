@@ -16,41 +16,41 @@
     <main class="main">
 
         <!-- Greatings -->
-        <div class="step step--done">
+        <step class="step step--active" v-bind:class="cssStatus">
             <div class="step__description">Welcome! I'll make some questions to help. Ok ?!</div>
             <button class="step__button" v-on:click="next">Next</button>
-        </div>
+        </step>
 
         <!-- Investiment -->
-        <div class="step step--active">
+        <step class="step">
             <div class="step__description">I want to invest</div>
             <input class="step__input" type="text">
             <button class="step__button" v-on:click="next">Next</button>
-        </div>
+        </step>
 
         <!-- Percent by year -->
-        <div class="step">
+        <step class="step">
             <div class="step__description">... with growth of</div>
             <input class="step__input" type="text"> %
             <div class="step__description">per year ...</div>
             <button class="step__button">Next</button>
-        </div>
+        </step>
 
         <!-- Time -->
-        <div class="step">
+        <step class="step">
             <div class="step__description">... for</div>
             <input class="step__input" type="text">
             <div class="step__description">years.</div>
             <button class="step__button">Next</button>
-        </div>
+        </step>
 
         <!-- Result -->
-        <div class="step">
+        <step class="step">
             <div class="step__description">So ... In {x} years You'll have:</div>
             <div>
                 {x}
             </div>
-        </div>
+        </step>
 
     </main>
 
