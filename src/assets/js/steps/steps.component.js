@@ -12,6 +12,10 @@
     new Vue({
         el: '.main',
         data: {
+            investiment: '',
+            rate: '',
+            time: '',
+            result: '',
             steps: [
                 {
                     id: 0,
@@ -41,11 +45,23 @@
                 this.$data.steps[step - 1].status = STATUS.COMPLETED;
                 this.$data.steps[step].status = STATUS.ACTIVE;
             },
-            cssStatus: function(step) {                
+
+            // Object with status classe
+            cssStatus: function(step) {
                 return {
                     'step--active' : (this.$data.steps[step].status === STATUS.ACTIVE),
                     'step--done' : (this.$data.steps[step].status === STATUS.COMPLETED)
                 };
+            },
+
+            // Get all the numbers and calculate wat It will be result.
+            process: function(){
+
+                let rate = this.$data.rate/100,
+                    result = this.$data.investiment * Math.pow(1 + rate, this.$data.time);
+
+                this.$data.result = result.toFixed(2);
+                this.goTo(4);
             }
         }
     });

@@ -24,14 +24,14 @@
         <!-- Investiment -->
         <step class="step" v-bind:class="cssStatus(1)">
             <div class="step__description">I want to invest</div>
-            <input class="step__input" type="text">
-            <button class="step__button" v-on:click="goTo(2)" >Next</button>
+            <input class="step__input" type="text" v-model="investiment">
+            <button class="step__button" v-on:click="goTo(2)">Next</button>
         </step>
 
         <!-- Percent by year -->
         <step class="step" v-bind:class="cssStatus(2)">
             <div class="step__description">... with growth of</div>
-            <input class="step__input" type="text"> %
+            <input class="step__input" type="text" v-model="rate"> %
             <div class="step__description">per year ...</div>
             <button class="step__button" v-on:click="goTo(3)">Next</button>
         </step>
@@ -39,16 +39,16 @@
         <!-- Time -->
         <step class="step" v-bind:class="cssStatus(3)">
             <div class="step__description">... for</div>
-            <input class="step__input" type="text">
+            <input class="step__input" type="text" v-model="time">
             <div class="step__description">years.</div>
-            <button class="step__button" v-on:click="goTo(4)">Next</button>
+            <button class="step__button" v-on:click="process">Next</button>
         </step>
 
         <!-- Result -->
         <step class="step" v-bind:class="cssStatus(4)">
-            <div class="step__description">So ... In {x} years You'll have:</div>
+            <div class="step__description">So ... In {{time}} years You'll have:</div>
             <div>
-                {x}
+                {{result}}
             </div>
         </step>
 
