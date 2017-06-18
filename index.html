@@ -16,16 +16,16 @@
     <main class="main">
 
         <!-- Greatings -->
-        <step class="step step--active" v-bind:class="cssStatus">
+        <step class="step" v-bind:class="cssStatus(0)">
             <div class="step__description">Welcome! I'll make some questions to help. Ok ?!</div>
-            <button class="step__button" v-on:click="next">Next</button>
+            <button class="step__button" v-on:click="goTo(1)">Next</button>
         </step>
 
         <!-- Investiment -->
-        <step class="step">
+        <step class="step" v-bind:class="cssStatus(1)">
             <div class="step__description">I want to invest</div>
             <input class="step__input" type="text">
-            <button class="step__button" v-on:click="next">Next</button>
+            <button class="step__button" v-on:click="goTo(2)" >Next</button>
         </step>
 
         <!-- Percent by year -->

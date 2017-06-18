@@ -2,6 +2,7 @@
 
     'use strict';
 
+    // Status of each steps
     const STATUS = {
         WAITING: 0,
         ACTIVE: 1,
@@ -9,29 +10,32 @@
     };
 
     new Vue({
-        el: '.step',
+        el: '.main',
         data: {
-            status: ''
-        },
-        computed: {
-            cssStatus: function() {
-                return {
-                    'step--done': (this.$data.status === STATUS.COMPLETED),
-                    'step--active': (this.$data.status === STATUS.ACTIVE)
-                };
-            }
+            steps: [
+                {
+                    id: 0,
+                    status: STATUS.ACTIVE
+                },
+                {
+                    id: 1,
+                    status: STATUS.WAITING
+                }
+            ]
         },
         methods: {
-            next: function() {
-                this.$data.status = STATUS.COMPLETED;
-                this.$emit('next');
+            // Set step to status completed
+            goTo: function(step) {
+                this.$data.steps[step - 1].status = STATUS.COMPLETED;
+                this.$data.steps[step].status = STATUS.ACTIVE;
             },
-            previus: function() {
-                this.$data.status = STATUS.WAITING;
-                this.$emit('previus');
+            cssStatus: function(step) {
+                return {
+                    'step--active' : (this.$data.steps[step].status === STATUS.ACTIVE),
+                    'step--done' : (this.$data.steps[step].status === STATUS.COMPLETED)
+                };
             }
         }
     });
-
 
 })(Vue);
