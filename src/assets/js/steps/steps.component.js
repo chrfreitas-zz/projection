@@ -9,30 +9,25 @@
     };
 
     new Vue({
-        el: '.main'
-    });
-
-    new Vue({
         el: '.step',
         data: {
-            status: {},
-            cssStatus: {
-                'step--done': STATUS.COMPLETED === this.data.status,
-                'step--active': STATUS.ACTIVE === this.data.status
-            }
+            status: ''
         },
-        computed: function(){
-            this.$data.status = STATUS.WAITING;
+        computed: {
+            cssStatus: function() {
+                return {
+                    'step--done': (this.$data.status === STATUS.COMPLETED),
+                    'step--active': (this.$data.status === STATUS.ACTIVE)
+                };
+            }
         },
         methods: {
             next: function() {
                 this.$data.status = STATUS.COMPLETED;
-
                 this.$emit('next');
             },
             previus: function() {
                 this.$data.status = STATUS.WAITING;
-
                 this.$emit('previus');
             }
         }
