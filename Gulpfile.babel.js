@@ -10,7 +10,6 @@ import jsmin from 'gulp-jsmin';
 import uglifycss from 'gulp-uglifycss';
 
 gulp.task('js:bundle', () => {
-
     gulp.start('js:clean');
 
     gulp.src(['src/assets/js/*/*.js', '!src/assets/js/**/*.test.js'])
@@ -30,15 +29,13 @@ gulp.task('js:clean', () => {
 })
 
 gulp.task('js:watch', () => {
+    gulp.start('js:bundle');
     gulp.watch('src/assets/js/*/*.js', ['js:bundle']);
 });
 
-gulp.task('js:test', () => {
-
-})
+gulp.task('js:test', () => {});
 
 gulp.task('stylus:bundle', () => {
-
     gulp.start('stylus:clean');
 
     gulp.src('src/assets/stylus/main.styl')
@@ -55,13 +52,11 @@ gulp.task('stylus:clean', () => {
 });
 
 gulp.task('stylus:watch', () => {
-
+    gulp.start('stylus:bundle');
     gulp.watch('src/assets/stylus/**/*.styl', ['stylus:bundle']);
-
 });
 
 gulp.task('vendor:bundle', () => {
-
     gulp.src('vendor/angular/angular.min.js')
         .pipe(gulp.dest('dist/vendor/angular'));
 
@@ -70,14 +65,13 @@ gulp.task('vendor:bundle', () => {
 });
 
 gulp.task('all:bundle', () => {
-
     gulp.start('lib:bundle');
     gulp.start('views:bundle');
     gulp.start('js:bundle');
     gulp.start('stylus:bundle');
-
 });
 
 gulp.task('all:watch', () => {
+    gulp.start('all:bundle');
     gulp.watch(['app/css/**/*.styl, app/js/**/*.js'], ['js:watch', 'css:watch'])
 });
