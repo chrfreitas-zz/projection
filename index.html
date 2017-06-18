@@ -29,23 +29,23 @@
         </step>
 
         <!-- Percent by year -->
-        <step class="step">
+        <step class="step" v-bind:class="cssStatus(2)">
             <div class="step__description">... with growth of</div>
             <input class="step__input" type="text"> %
             <div class="step__description">per year ...</div>
-            <button class="step__button">Next</button>
+            <button class="step__button" v-on:click="goTo(3)">Next</button>
         </step>
 
         <!-- Time -->
-        <step class="step">
+        <step class="step" v-bind:class="cssStatus(3)">
             <div class="step__description">... for</div>
             <input class="step__input" type="text">
             <div class="step__description">years.</div>
-            <button class="step__button">Next</button>
+            <button class="step__button" v-on:click="goTo(4)">Next</button>
         </step>
 
         <!-- Result -->
-        <step class="step">
+        <step class="step" v-bind:class="cssStatus(4)">
             <div class="step__description">So ... In {x} years You'll have:</div>
             <div>
                 {x}

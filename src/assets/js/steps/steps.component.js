@@ -20,6 +20,18 @@
                 {
                     id: 1,
                     status: STATUS.WAITING
+                },
+                {
+                    id: 2,
+                    status: STATUS.WAITING
+                },
+                {
+                    id: 3,
+                    status: STATUS.WAITING
+                },
+                {
+                    id: 4,
+                    status: STATUS.WAITING
                 }
             ]
         },
@@ -29,7 +41,7 @@
                 this.$data.steps[step - 1].status = STATUS.COMPLETED;
                 this.$data.steps[step].status = STATUS.ACTIVE;
             },
-            cssStatus: function(step) {
+            cssStatus: function(step) {                
                 return {
                     'step--active' : (this.$data.steps[step].status === STATUS.ACTIVE),
                     'step--done' : (this.$data.steps[step].status === STATUS.COMPLETED)
