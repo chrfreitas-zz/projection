@@ -11,6 +11,8 @@
     "globals": {
         "Vue": true,
         "console": true,
-        "debugger": true
+        "debugger": true,
+        "VMasker": true,
+        "document": true
     }
 }

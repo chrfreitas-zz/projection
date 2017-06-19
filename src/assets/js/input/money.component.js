@@ -1,4 +1,4 @@
-(function(Vue){
+(function(Vue, VMasker){
 
     'use strict';
 
@@ -6,14 +6,23 @@
         template: '<input class="step__input" type="text" v-model="value" v-on:input="onChange">',
         data: function(){
             return {
-                value: ''
+                value: 0
             };
         },
         methods: {
             onChange: function(){
                 this.$emit('change', this.$data.value);
             }
+        },
+        mounted: function(){
+
+            VMasker(this.$el).maskMoney({
+                precision: 2,
+                separator: ',',
+                delimiter: '.',
+                zeroCents: true
+            });
         }
     });
 
-})(Vue);
+})(Vue, VMasker);
