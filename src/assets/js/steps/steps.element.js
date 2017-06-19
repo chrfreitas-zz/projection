@@ -62,6 +62,10 @@
 
                 this.$data.result = result.toFixed(2);
                 this.goTo(4);
+            },
+
+            changeInvestiment: function(value){
+                this.$data.investiment = value;
             }
         }
     });

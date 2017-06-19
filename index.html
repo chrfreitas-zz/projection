@@ -24,7 +24,8 @@
         <!-- Investiment -->
         <step class="step" v-bind:class="cssStatus(1)">
             <div class="step__description">I want to invest</div>
-            <input class="step__input" type="text" v-model="investiment">
+            <!-- <input class="step__input" type="text" v-model="investiment"> -->
+            <input-money v-on:change="changeInvestiment"></input-money>
             <button class="step__button" v-on:click="goTo(2)">Next</button>
         </step>
 
