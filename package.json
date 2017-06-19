@@ -22,10 +22,13 @@
     "gulp-jsmin": "^0.1.5",
     "gulp-less": "^3.3.0",
     "gulp-sourcemaps": "^2.6.0",
-    "gulp-uglifycss": "^1.0.8",
-    "jshint": "^2.9.4",
     "gulp-stylus": "^2.6.0",
+    "gulp-uglifycss": "^1.0.8",
     "http-server": "^0.10.0",
+    "jshint": "^2.9.4"
+  },
+  "dependencies": {
+    "vanilla-masker": "^1.2.0",
     "vue": "^2.3.4"
   }
 }
