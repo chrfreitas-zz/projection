@@ -40,8 +40,10 @@
             <div class="step__description">per year ...</div>
 
             <!-- Actions -->
-            <a class="step__link" v-on:click="previus(1)">Come back</a>
-            <button class="step__button" v-on:click="next(3)">Next</button>
+            <div class="step__actions">
+                <a class="step__link" v-on:click="previus(1)">Come back</a>
+                <button class="step__button" v-on:click="next(3)">Next</button>
+            </div>
         </step>
 
         <!-- Time -->
@@ -52,8 +54,10 @@
             <div class="step__description">years.</div>
 
             <!-- Actions -->
-            <a class="step__link" v-on:click="previus(2)">Come back</a>
-            <button class="step__button" v-on:click="process">Next</button>
+            <div class="step__actions">
+                <a class="step__link" v-on:click="previus(2)">Come back</a>
+                <button class="step__button" v-on:click="process">Next</button>
+            </div>
         </step>
 
         <!-- Result -->
