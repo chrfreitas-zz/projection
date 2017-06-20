@@ -41,8 +41,14 @@
         },
         methods: {
             // Set step to status completed
-            goTo: function(step) {
+            next: function(step) {
                 this.$data.steps[step - 1].status = STATUS.COMPLETED;
+                this.$data.steps[step].status = STATUS.ACTIVE;
+            },
+
+            // Set step to status waiting
+            previus: function(step){
+                this.$data.steps[step + 1].status = STATUS.WAITING;
                 this.$data.steps[step].status = STATUS.ACTIVE;
             },
 
