@@ -65,13 +65,11 @@ gulp.task('vendor:bundle', () => {
 });
 
 gulp.task('all:bundle', () => {
-    gulp.start('lib:bundle');
-    gulp.start('views:bundle');
     gulp.start('js:bundle');
     gulp.start('stylus:bundle');
 });
 
 gulp.task('all', () => {
     gulp.start('all:bundle');
-    gulp.watch(['app/css/**/*.styl, app/js/**/*.js'], ['js', 'stylus'])
+    gulp.watch(['src/assets/stylus/**/*.styl, src/assets/js/*/*.js'], ['js:bundle', 'stylus:bundle'])
 });
