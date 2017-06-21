@@ -35,7 +35,7 @@
         <step class="step" v-bind:class="cssStatus(2)">
             <!--Data -->
             <div class="step__description">What is it growth per year ? (%)</div>
-            <input class="step__input" type="text" v-model="rate">
+            <input-rate v-on:change="changeRate"></input-rate>
 
             <!-- Actions -->
             <div class="step__actions">

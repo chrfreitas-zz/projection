@@ -70,8 +70,14 @@
                 this.goTo(4);
             },
 
+            // Receive the value of investiment input from component
             changeInvestiment: function(value){
                 this.$data.investiment = value;
+            },
+
+            // Receive the value of rate input from component
+            changeRate: function(value){
+                this.$data.rate = value;
             }
         }
     });
