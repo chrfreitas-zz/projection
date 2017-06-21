@@ -33,11 +33,9 @@
 
         <!-- Percent by year -->
         <step class="step" v-bind:class="cssStatus(2)">
-
             <!--Data -->
-            <div class="step__description">... with growth of</div>
-            <input class="step__input" type="text" v-model="rate"> %
-            <div class="step__description">per year ...</div>
+            <div class="step__description">What is it growth per year ? (%)</div>
+            <input class="step__input" type="text" v-model="rate">
 
             <!-- Actions -->
             <div class="step__actions">
@@ -49,9 +47,8 @@
         <!-- Time -->
         <step class="step" v-bind:class="cssStatus(3)">
             <!-- Data -->
-            <div class="step__description">... for</div>
+            <div class="step__description">How much time do you want to invest {{investiment}} ?</div>
             <input class="step__input" type="text" v-model="time">
-            <div class="step__description">years.</div>
 
             <!-- Actions -->
             <div class="step__actions">
