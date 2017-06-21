@@ -28,7 +28,7 @@ gulp.task('js:clean', () => {
     del.sync(['dist/js/bundle.js']);
 })
 
-gulp.task('js:watch', () => {
+gulp.task('js', () => {
     gulp.start('js:bundle');
     gulp.watch('src/assets/js/*/*.js', ['js:bundle']);
 });
@@ -51,7 +51,7 @@ gulp.task('stylus:clean', () => {
     del.sync(['dist/css/style.css']);
 });
 
-gulp.task('stylus:watch', () => {
+gulp.task('stylus', () => {
     gulp.start('stylus:bundle');
     gulp.watch('src/assets/stylus/**/*.styl', ['stylus:bundle']);
 });
@@ -71,7 +71,7 @@ gulp.task('all:bundle', () => {
     gulp.start('stylus:bundle');
 });
 
-gulp.task('all:watch', () => {
+gulp.task('all', () => {
     gulp.start('all:bundle');
-    gulp.watch(['app/css/**/*.styl, app/js/**/*.js'], ['js:watch', 'css:watch'])
+    gulp.watch(['app/css/**/*.styl, app/js/**/*.js'], ['js', 'stylus'])
 });
