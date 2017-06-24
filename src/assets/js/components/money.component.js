@@ -2,6 +2,12 @@
 
     'use strict';
 
+    function takeOffMoneyMask(value = 0) {
+        value = value.replace(/\./ig, '');
+        value = value.replace(/\,/ig, '');
+        return value;
+    }
+
     Vue.component('input-money', {
         template: '<input class="step__input" type="text" v-model="value" v-on:input="onChange">',
         data: function(){
@@ -11,7 +17,12 @@
         },
         methods: {
             onChange: function(){
-                this.$emit('change', this.$data.value);
+                let money = {
+                    value: takeOffMoneyMask(this.$data.value),
+                    mask: this.$data.value
+                };
+
+                this.$emit('change', money);
             }
         },
         mounted: function(){

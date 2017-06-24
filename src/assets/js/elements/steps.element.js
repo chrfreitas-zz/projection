@@ -12,7 +12,10 @@
     new Vue({
         el: '.main',
         data: {
-            investiment: '',
+            investiment: {
+                value: '',
+                mask: ''
+            },
             rate: '',
             time: '',
             result: '',
@@ -64,15 +67,15 @@
             process: function(){
 
                 let rate = this.$data.rate/100,
-                    result = this.$data.investiment * Math.pow(1 + rate, this.$data.time);
+                    result = this.$data.investiment.value * Math.pow(1 + rate, this.$data.time);
 
                 this.$data.result = result.toFixed(2);
-                this.goTo(4);
+                this.next(4);
             },
 
             // Receive the value of investiment input from component
-            changeInvestiment: function(value){
-                this.$data.investiment = value;
+            changeInvestiment: function(investiment){
+                this.$data.investiment = investiment;
             },
 
             // Receive the value of rate input from component

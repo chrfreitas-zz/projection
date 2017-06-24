@@ -7,7 +7,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="dist/css/style.min.css">
-    
+
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
 </head>
@@ -47,7 +47,7 @@
         <!-- Time -->
         <step class="step" v-bind:class="cssStatus(3)">
             <!-- Data -->
-            <div class="step__description">How much time do you want to invest {{investiment}} ?</div>
+            <div class="step__description">How much time do you want to invest {{investiment.mask}} ?</div>
             <input class="step__input" type="text" v-model="time">
 
             <!-- Actions -->
@@ -70,5 +70,6 @@
     <script src="node_modules/vanilla-masker/build/vanilla-masker.min.js"></script>
     <script src="node_modules/vue/dist/vue.min.js"></script>
     <script src="dist/js/bundle.min.js"></script>
+
 </body>
 </html>
