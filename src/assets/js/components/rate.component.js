@@ -3,7 +3,7 @@
 
     Vue.component('input-rate', {
         template: '<input class="step__input" type="text" v-on:keyup.enter="onNext" v-model="value" v-on:input="onChange">',
-        data: function() {
+        data() {
             return {
                 value: ''
             };
@@ -16,7 +16,7 @@
                 this.$emit('next');
             }
         },
-        mounted: function(){
+        mounted() {
             VMasker(this.$el).maskPattern('99999');
         }
     });

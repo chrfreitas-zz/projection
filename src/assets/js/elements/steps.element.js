@@ -44,19 +44,19 @@
         },
         methods: {
             // Set step to status completed
-            next: function(step) {
+            next(step) {
                 this.$data.steps[step - 1].status = STATUS.COMPLETED;
                 this.$data.steps[step].status = STATUS.ACTIVE;
             },
 
             // Set step to status waiting
-            previus: function(step){
+            previus(step){
                 this.$data.steps[step + 1].status = STATUS.WAITING;
                 this.$data.steps[step].status = STATUS.ACTIVE;
             },
 
             // Object with status classe
-            cssStatus: function(step) {
+            cssStatus(step) {
                 return {
                     'step--active' : (this.$data.steps[step].status === STATUS.ACTIVE),
                     'step--done' : (this.$data.steps[step].status === STATUS.COMPLETED)
@@ -64,7 +64,7 @@
             },
 
             // Get all the numbers and calculate wat It will be result.
-            process: function(){
+            process(){
 
                 let rate = this.$data.rate/100,
                     result = this.$data.investiment.value * Math.pow(1 + rate, this.$data.time);
@@ -74,12 +74,12 @@
             },
 
             // Receive the value of investiment input from component
-            changeInvestiment: function(investiment){
+            changeInvestiment(investiment){
                 this.$data.investiment = investiment;
             },
 
             // Receive the value of rate input from component
-            changeRate: function(value){
+            changeRate(value){
                 this.$data.rate = value;
             }
         }

@@ -10,13 +10,13 @@
 
     Vue.component('input-money', {
         template: '<input class="step__input" type="text" v-on:keyup.enter="onNext" v-model="value" v-on:input="onChange">',
-        data: function(){
+        data(){
             return {
                 value: 0
             };
         },
         methods: {
-            onChange: function(){
+            onChange() {
                 let money = {
                     value: takeOffMoneyMask(this.$data.value),
                     mask: this.$data.value
@@ -24,12 +24,11 @@
 
                 this.$emit('change', money);
             },
-
-            onNext: function(){
+            onNext(){
                 this.$emit('next');
             }
         },
-        mounted: function(){
+        mounted() {
             VMasker(this.$el).maskMoney({
                 precision: 2,
                 separator: ',',
