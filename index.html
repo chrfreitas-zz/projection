@@ -18,7 +18,11 @@
         <!-- Greatings -->
         <step class="step" v-bind:class="cssStatus(0)">
             <div class="step__description">Welcome! I'll make some questions to help. Ok ?!</div>
-            <button class="step__button" v-on:click="next(1)">Let's go !</button>
+
+            <!-- Actions -->
+            <div class="step__actions">
+                <button class="step__button" v-on:click="next(1)">Let's go !</button>
+            </div>
         </step>
 
         <!-- Investiment -->
@@ -28,7 +32,9 @@
             <input-money v-on:next="next(2)" v-on:change="changeInvestiment"></input-money>
 
             <!-- Actions -->
-            <button class="step__button" v-on:click="next(2)">Next</button>
+            <div class="step__actions">
+                <button class="step__button" v-on:click="next(2)">Next</button>
+            </div>
         </step>
 
         <!-- Percent by year -->

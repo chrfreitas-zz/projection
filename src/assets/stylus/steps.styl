@@ -1,4 +1,3 @@
-$font-size = 20px
 
 .step
     flex-direction column
@@ -9,6 +8,7 @@ $font-size = 20px
     position absolute
     display inline-flex
     transition transform 1s, opacity 2s
+    width 300px
 
     &--active
         transition transform 1s, opacity 2s
@@ -24,17 +24,17 @@ $font-size = 20px
 
     &__description
         color $white
-        font-size $font-size
+        font-size 20px
         text-align center
+        margin 0 0 15%
 
     &__input
         background transparent
         border none
         border-bottom 1px solid #fff
         color #fff
-        font-size $font-size
+        font-size 30px
         text-align center
-        margin 10px 0
         width 75%
         font-family $font-nano
 
@@ -45,6 +45,9 @@ $font-size = 20px
             outline: 0;
             border-bottom: 1px solid #fff
 
+    &__actions
+        margin 15% 0 0 0
+
     &__button
         background-color transparent
         border-radius 3px
@@ -52,7 +55,6 @@ $font-size = 20px
         color $white
         padding 10px 45px
         font-size 15px
-        margin 45px 0 0 0
         font-family $font-nano
 
     &__link
@@ -60,3 +62,13 @@ $font-size = 20px
         cursor pointer
         text-decoration underline
         margin 0 20px 0 0
+
+@media $600
+    .step
+        width 400px
+
+        &__description
+            font-size 26px
+
+        &__button
+            font-size 17px
