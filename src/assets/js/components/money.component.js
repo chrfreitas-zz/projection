@@ -9,7 +9,7 @@
     }
 
     Vue.component('input-money', {
-        template: '<input class="step__input" type="text" v-model="value" v-on:input="onChange">',
+        template: '<input class="step__input" type="text" v-on:keyup.enter="onNext" v-model="value" v-on:input="onChange">',
         data: function(){
             return {
                 value: 0
@@ -23,10 +23,13 @@
                 };
 
                 this.$emit('change', money);
+            },
+
+            onNext: function(){
+                this.$emit('next');
             }
         },
         mounted: function(){
-
             VMasker(this.$el).maskMoney({
                 precision: 2,
                 separator: ',',

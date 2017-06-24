@@ -25,7 +25,7 @@
         <step class="step" v-bind:class="cssStatus(1)">
             <!-- Data -->
             <div class="step__description">I want to invest</div>
-            <input-money v-on:change="changeInvestiment"></input-money>
+            <input-money v-on:next="next(2)" v-on:change="changeInvestiment"></input-money>
 
             <!-- Actions -->
             <button class="step__button" v-on:click="next(2)">Next</button>
@@ -35,7 +35,7 @@
         <step class="step" v-bind:class="cssStatus(2)">
             <!--Data -->
             <div class="step__description">What is it growth per year ? (%)</div>
-            <input-rate v-on:change="changeRate"></input-rate>
+            <input-rate v-on:next="next(3)" v-on:change="changeRate"></input-rate>
 
             <!-- Actions -->
             <div class="step__actions">
