@@ -53,7 +53,7 @@
         <!-- Time -->
         <step class="step" v-bind:class="cssStatus(3)">
             <!-- Data -->
-            <div class="step__description">How much time do you want to invest {{investiment.mask}} ?</div>
+            <div class="step__description">How much time do you want to invest R$ {{investiment.mask}} ?</div>
             <input class="step__input" type="text" v-model="time">
 
             <!-- Actions -->
@@ -65,9 +65,9 @@
 
         <!-- Result -->
         <step class="step" v-bind:class="cssStatus(4)">
-            <div class="step__description">So ... In {{time}} years You'll have:</div>
-            <div>
-                {{result}}
+            <div class="step__description">In {{time}} years You'll have</div>
+            <div class="step__result">
+                R$ {{result}}
             </div>
         </step>
 

@@ -1,4 +1,4 @@
-(function(Vue){
+(function(Vue, VMasker){
 
     'use strict';
 
@@ -65,11 +65,10 @@
 
             // Get all the numbers and calculate wat It will be result.
             process(){
-
                 let rate = this.$data.rate/100,
-                    result = this.$data.investiment.value * Math.pow(1 + rate, this.$data.time);
+                    result = this.$data.investiment.value * Math.pow(1 + rate, this.$data.time).toFixed(2);
 
-                this.$data.result = result.toFixed(2);
+                this.$data.result = VMasker.toMoney(result);
                 this.next(4);
             },
 
@@ -85,4 +84,4 @@
         }
     });
 
-})(Vue);
+})(Vue, VMasker);
