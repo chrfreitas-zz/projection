@@ -54,7 +54,7 @@
         <step class="step" v-bind:class="cssStatus(3)">
             <!-- Data -->
             <div class="step__description">How much time do you want to invest R$ {{investiment.mask}} ?</div>
-            <input class="step__input" type="text" v-model="time">
+            <input-time v-on:next="process" v-on:change="changeTime"></input-time>
 
             <!-- Actions -->
             <div class="step__actions">

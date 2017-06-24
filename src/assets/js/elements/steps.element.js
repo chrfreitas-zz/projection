@@ -80,6 +80,11 @@
             // Receive the value of rate input from component
             changeRate(value){
                 this.$data.rate = value;
+            },
+
+            // Receive the value of rate time from component
+            changeTime(value){
+                this.$data.time = value;
             }
         }
     });
