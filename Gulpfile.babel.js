@@ -33,8 +33,6 @@ gulp.task('js', () => {
     gulp.watch('src/assets/js/*/*.js', ['js:bundle']);
 });
 
-gulp.task('js:test', () => {});
-
 gulp.task('stylus:bundle', () => {
     gulp.start('stylus:clean');
 
@@ -71,5 +69,5 @@ gulp.task('all:bundle', () => {
 
 gulp.task('all', () => {
     gulp.start('all:bundle');
-    gulp.watch(['src/assets/stylus/**/*.styl, src/assets/js/*/*.js'], ['js:bundle', 'stylus:bundle'])
+    gulp.watch(['src/assets/stylus/*.styl', 'src/assets/js/*/*.js'], ['js:bundle', 'stylus:bundle'])
 });
