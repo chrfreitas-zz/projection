@@ -4,21 +4,13 @@ The purpose of this project is give you a prediction your money invested in a fi
 
 ### Installing
 
-For yarn's users:
-
-```bash
-$ yarn install
-```
-
-```bash
-$ yarn run start
-```
-
-Or with npm's user:
+It's really simples first you need to install all of dependencies
 
 ```bash
 $ npm install
 ```
+
+After you can run the command line below and your browser will open with the application.
 
 ```bash
 $ npm run start
