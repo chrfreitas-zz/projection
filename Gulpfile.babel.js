@@ -54,12 +54,12 @@ gulp.task('stylus', () => {
     gulp.watch('src/assets/stylus/**/*.styl', ['stylus:bundle']);
 });
 
-gulp.task('vendor:bundle', () => {
-    gulp.src('vendor/angular/angular.min.js')
-        .pipe(gulp.dest('dist/vendor/angular'));
+gulp.task('vendor', () => {
+    gulp.src('node_modules/vanilla-masker/build/vanilla-masker.min.js')
+        .pipe(gulp.dest('vendor/vanilla-masker/'));
 
-    gulp.src('vendor/angular-route/angular-route.min.js')
-        .pipe(gulp.dest('dist/vendor/angular-route'));
+    gulp.src('node_modules/vue/dist/vue.min.js')
+        .pipe(gulp.dest('vendor/vue'));
 });
 
 gulp.task('all:bundle', () => {
